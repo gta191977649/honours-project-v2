@@ -29,7 +29,7 @@ def network_model():
     model = Sequential()
 
     model.add(Dense(108,input_dim=260, activation='relu'))
-    model.add(Dense(8, activation='relu'))
+    model.add(Dense(260))
     model.add(Dense(1, activation='linear'))
     #adam = Adam(0.00001,0.99,0.999)
 
@@ -41,7 +41,7 @@ def network_model():
 # kfold = KFold(n_splits=2)
 # results = cross_val_score(estimator, data_x, data_valance_y, cv=kfold)
 # print("Results: %.2f (%.2f) MSE" % (results.mean(), results.std()))
-train_x,test_x,train_y,test_y = train_test_split(data_x, data_valance_y, test_size=0.20,shuffle=True)
+train_x,test_x,train_y,test_y = train_test_split(data_x, data_arousal_y, test_size=0.20,shuffle=True)
 
 model = network_model()
 model.fit(train_x,train_y,epochs=100,batch_size=40)
