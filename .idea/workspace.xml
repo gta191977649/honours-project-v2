@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29d47445-781c-474a-9996-96e14e73e40d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/GridSearch.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GridSearch.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RFE_feature.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
