@@ -1,0 +1,6 @@
+random
+
+n_estimators [100-1000] 
+max_features 
+criterion
+* 搜一下影响

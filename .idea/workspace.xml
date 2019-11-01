@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29d47445-781c-474a-9996-96e14e73e40d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/feature_rank_select_csv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.~lock.rank_arousal.csv#" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RFR_feature_select.py" beforeDir="false" afterPath="$PROJECT_DIR$/RFR_feature_select.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e.csv" beforeDir="false" afterPath="$PROJECT_DIR$/e.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neural_network.py" beforeDir="false" afterPath="$PROJECT_DIR$/neural_network.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rank_valance.csv" beforeDir="false" afterPath="$PROJECT_DIR$/rank_valance.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GridSearch.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GridSearch.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

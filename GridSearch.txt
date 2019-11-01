@@ -10,3 +10,6 @@ Parameters: {'criterion': 'mse', 'max_features': 'auto', 'n_estimators': 300}
 Model with rank: 3
 Mean validation score: 0.336 (std: 0.009)
 Parameters: {'criterion': 'mse', 'max_features': 'auto', 'n_estimators': 1000}
+
+zscore: mean ~= 0
+std~= 1
