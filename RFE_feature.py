@@ -9,10 +9,10 @@ from sklearn.svm import SVR
 from sklearn.model_selection import StratifiedKFold
 import json
 from utils import printHeader
-#DATA_LIMIT = 260
+
 
 PATH_DATA_SET = 'D:/dev/honours-project-v2/dataset/dataset_nor_zsocre.csv'
-dataset = pd.read_csv(PATH_DATA_SET)#[:DATA_LIMIT]
+dataset = pd.read_csv(PATH_DATA_SET)
 data_x = dataset.loc[:,'F0final_sma_stddev':'pcm_fftMag_mfcc_sma_de[14]_amean']
 data_valance_y = dataset.loc[:,'v']
 data_arousal_y = dataset.loc[:,'a']
@@ -29,7 +29,6 @@ def rfe_rank(label_set,filename):
 
     print("Optimal number of features : %d" % rfe.n_features_)
     print(rfe.ranking_)
-
     # print feature importances
     feature_cols = data_x.columns.values
     rfe_rank = []
@@ -40,6 +39,8 @@ def rfe_rank(label_set,filename):
     rfe_csv = pd.DataFrame(rfe_rank)
     rfe_csv = rfe_csv.sort_values(by='rank')
     rfe_csv.to_csv('./{}.csv'.format(filename))
+
+
 
 printHeader()
 
