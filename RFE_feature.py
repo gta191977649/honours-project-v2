@@ -10,9 +10,11 @@ from sklearn.model_selection import StratifiedKFold
 import json
 from utils import printHeader
 
-
+#LIMIT
+#70% Traning, 30 Testing
+LIMIT = 1260
 PATH_DATA_SET = 'D:/dev/honours-project-v2/dataset/dataset_nor_zsocre.csv'
-dataset = pd.read_csv(PATH_DATA_SET)
+dataset = pd.read_csv(PATH_DATA_SET)[:1260]
 data_x = dataset.loc[:,'F0final_sma_stddev':'pcm_fftMag_mfcc_sma_de[14]_amean']
 data_valance_y = dataset.loc[:,'v']
 data_arousal_y = dataset.loc[:,'a']

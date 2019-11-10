@@ -71,13 +71,13 @@ def rfeTest(rankPath,testingfor):
 
         #2.对每一个数据集合测试Regressor
         train_x, test_x, train_y, test_y = prepareDatasetForTraining(feature,testingfor)
-        #score = runSVMRegressor(train_x,train_y,test_x,test_y)
-        score = runRFRegressor(train_x,train_y,test_x,test_y)
+        score = runSVMRegressor(train_x,train_y,test_x,test_y)
+        #score = runRFRegressor(train_x,train_y,test_x,test_y)
         #3.获取regressor结果
         print("\n")
         system('cls')
         printHeader()
-        print("Benchmark 第:{}个特征 for: {}".format(n_of_feature,testingfor))
+        print("Benchmark 第:{}个特征 for: {}".format(len(selected_feature)+1,testingfor))
         print("------------------- SVR Result ---------------------")
         print("SCORE:{}".format(score))
         print("----------------------------------------------------")
@@ -91,12 +91,12 @@ def startRFEFeatureTest():
     valanceScore = rfeTest(PATH_RANK_V,'v')
     #保存文件
     csv = pd.DataFrame(valanceScore)
-    csv.to_csv('./rfe_benchmark_v.csv')
+    csv.to_csv('./rfe_benchmark_svr_v.csv')
     #测试 arousal
     arousalScore = rfeTest(PATH_RANK_A,'a')
     # 保存文件
     csv = pd.DataFrame(arousalScore)
-    csv.to_csv('./rfe_benchmark_a.csv')
+    csv.to_csv('./rfe_benchmark_svr_a.csv')
 
     print("Benchmark Finish!")
 

@@ -14,7 +14,7 @@ PATH_RANK_A = './rank_rfe_arousal.csv'
 PATH_RANK_V = './rank_rfe_valance.csv'
 
 
-dataset = pd.read_csv(PATH_DATA_SET)
+dataset = pd.read_csv(PATH_DATA_SET)[1260:1800]
 data_x = dataset.loc[:,'F0final_sma_stddev':'pcm_fftMag_mfcc_sma_de[14]_amean']
 data_valance_y = dataset.loc[:,'v']
 data_arousal_y = dataset.loc[:,'a']
@@ -73,8 +73,8 @@ def cv_dataset(data_x,data_y,filename):
 cv_dataset(data_x,data_arousal_y,"cv_deam_a")
 cv_dataset(data_x,data_valance_y,"cv_deam_v")
 
-sf_train_a_x = generateBestArousalTrainX(133)
-sf_train_v_x = generateBestValanceTrainX(139)
+sf_train_a_x = generateBestArousalTrainX(43)
+sf_train_v_x = generateBestValanceTrainX(85)
 sf_train_a_x = np.array(sf_train_a_x)
 sf_train_v_x = np.array(sf_train_v_x)
 
