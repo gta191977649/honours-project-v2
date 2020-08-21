@@ -105,7 +105,7 @@ def gridSearchSVR(train_x,train_y):
     grid_search = GridSearchCV(clf,param_grid=param_grid,cv=5,iid=False,verbose=3)
     grid_search.fit(train_x,train_y)
     report(grid_search.cv_results_)
-#训练Valance
+# Train Valance
 def doGridSearch(data_x,data_valance_y,data_arousal_y):
     # train_x, test_x, train_y, test_y = train_test_split(data_x, data_valance_y, test_size=0.20, shuffle=True)
     #gridSearchCVRFR(train_x, train_y)

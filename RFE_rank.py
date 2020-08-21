@@ -15,13 +15,13 @@ database = pd.read_csv(PATH_DATA_SET)
 PATH_RANK_A = './rank_rfe_arousal.csv'
 PATH_RANK_V = './rank_rfe_valance.csv'
 
-#根据给定的feature建立特殊的特征集
+# Build up feature set 
 def constructFeatureSet(selectedFeature):
     featureSet = {}
     for col in selectedFeature:
         featureSet[col] = database[col]
 
-    #插入annotation
+    # Insert annotation
     featureSet['v'] = database['v']
     featureSet['a'] = database['a']
     featureSet['song_id'] = database['song_id']
@@ -54,7 +54,7 @@ def prepareDatasetForTraining(feature,annotation):
     data_y = feature.loc[:, annotation]
     data_x = np.array(data_x)
     data_y = np.array(data_y)
-    # 拆分测试和训练
+    # Split testing and training
     return train_test_split(data_x, data_y, test_size=0.20, shuffle=True)
 
 def rfeTest(rankPath,testingfor):
@@ -66,14 +66,14 @@ def rfeTest(rankPath,testingfor):
     for col in data["feature"]:
         selected_feature.append(col)
         n_of_feature+=1
-        #1.构造测试数据集合
+        #1.Construct test set collection
         feature = constructFeatureSet(selected_feature)
 
-        #2.对每一个数据集合测试Regressor
+        #2.Test Regressor on each test set
         train_x, test_x, train_y, test_y = prepareDatasetForTraining(feature,testingfor)
         score_svr = runSVMRegressor(train_x,train_y,test_x,test_y)
         score_rmf = runRFRegressor(train_x,train_y,test_x,test_y)
-        #3.获取regressor结果
+        #3.Obtain regressor results
         print("\n")
         system('cls')
         #printHeader()
@@ -91,15 +91,15 @@ def rfeTest(rankPath,testingfor):
     return result
 
 def startRFEFeatureTest():
-    #需要测试2类，valance 和 arousal
-    #测试 valance
+    #need 2 type，valance 和 arousal
+    #Test valance
     valanceScore = rfeTest(PATH_RANK_V,'v')
-    #保存文件
+    #Save to csv
     csv = pd.DataFrame(valanceScore)
     csv.to_csv('./rfe_benchmark_svr_v.csv')
-    #测试 arousal
+    #Test arousal
     arousalScore = rfeTest(PATH_RANK_A,'a')
-    # 保存文件
+    # Save to csv
     csv = pd.DataFrame(arousalScore)
     csv.to_csv('./rfe_benchmark_svr_a.csv')
 
