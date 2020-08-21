@@ -71,18 +71,23 @@ def rfeTest(rankPath,testingfor):
 
         #2.对每一个数据集合测试Regressor
         train_x, test_x, train_y, test_y = prepareDatasetForTraining(feature,testingfor)
-        score = runSVMRegressor(train_x,train_y,test_x,test_y)
-        #score = runRFRegressor(train_x,train_y,test_x,test_y)
+        score_svr = runSVMRegressor(train_x,train_y,test_x,test_y)
+        score_rmf = runRFRegressor(train_x,train_y,test_x,test_y)
         #3.获取regressor结果
         print("\n")
         system('cls')
-        printHeader()
-        print("Benchmark 第:{}个特征 for: {}".format(len(selected_feature)+1,testingfor))
+        #printHeader()
+        print("Benchmark feature:{} for: {}".format(len(selected_feature)+1,testingfor))
         print("------------------- SVR Result ---------------------")
-        print("SCORE:{}".format(score))
+        print("SCORE:{}".format(score_svr))
         print("----------------------------------------------------")
-        result.append({"n_of_feature":n_of_feature,"score":score})
+        result.append({"n_of_feature":n_of_feature,"score":score_svr})
 
+        print("Benchmark feature:{} for: {}".format(len(selected_feature)+1,testingfor))
+        print("------------------- RANDOM FOREST Result ---------------------")
+        print("SCORE:{}".format(score_rmf))
+        print("----------------------------------------------------")
+        result.append({"n_of_feature":n_of_feature,"score":score_rmf})
     return result
 
 def startRFEFeatureTest():

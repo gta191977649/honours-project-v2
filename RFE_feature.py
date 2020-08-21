@@ -1,10 +1,9 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-from sklearn.feature_selection import RFE
+from sklearn.feature_selection import RFECV
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
-from rfpimp import *
 from sklearn.svm import SVR
 from sklearn.model_selection import StratifiedKFold
 import json
@@ -13,7 +12,7 @@ from utils import printHeader
 #LIMIT
 #70% Traning, 30 Testing
 LIMIT = 1260
-PATH_DATA_SET = 'D:/dev/honours-project-v2/dataset/dataset_nor_zsocre.csv'
+PATH_DATA_SET = './dataset/dataset_nor_zsocre.csv'
 dataset = pd.read_csv(PATH_DATA_SET)[:1260]
 data_x = dataset.loc[:,'F0final_sma_stddev':'pcm_fftMag_mfcc_sma_de[14]_amean']
 data_valance_y = dataset.loc[:,'v']
@@ -26,7 +25,8 @@ def rfe_rank(label_set,filename):
     print("Start rfe feature selection for {}".format(filename))
     svr = SVR(kernel="linear")
 
-    rfe = RFE(svr, n_features_to_select=1, verbose=3)
+    #rfe = RFECV(svr, n_features_to_select=1, verbose=3)
+    rfe = RFECV(svr, verbose=3)
     rfe.fit(data_x, label_set)
 
     print("Optimal number of features : %d" % rfe.n_features_)
@@ -44,7 +44,7 @@ def rfe_rank(label_set,filename):
 
 
 
-printHeader()
+#printHeader()
 
 rfe_rank(data_valance_y,"rank_rfe_valance")
 rfe_rank(data_arousal_y,"rank_rfe_arousal")

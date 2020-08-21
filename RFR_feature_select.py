@@ -6,7 +6,7 @@ from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import GridSearchCV
 from sklearn.svm import SVR
 from math import *
-# 准备数据集
+# papare data set
 def prepareDataset(datasetPath,range_start,range_end):
     PATH_DATA_SET = datasetPath
 
@@ -25,7 +25,7 @@ def prepareDataset(datasetPath,range_start,range_end):
 
     return data_x,data_valance_y,data_arousal_y,train_csv
 
-#配置Random forest Regressor (Valance)
+#Setup Random forest Regressor (Valance)
 def runRFRRegressor(train_x,train_y,test_x,test_y,rankingFileName,train_csv):
     print("Run RandomForestRegressor")
 
@@ -37,7 +37,7 @@ def runRFRRegressor(train_x,train_y,test_x,test_y,rankingFileName,train_csv):
                oob_score=False, random_state=0, verbose=0, warm_start=False,)
     RFR.fit(train_x,train_y)
 
-    # 测试模型
+    # Envaluate model
     v_predict = RFR.predict(test_x)
 
     mse = mean_squared_error(test_y, v_predict)
@@ -53,7 +53,7 @@ def runRFRRegressor(train_x,train_y,test_x,test_y,rankingFileName,train_csv):
     print("MSE:{},RMSE:{},SCORE:{}".format(mse, rmse, score))
     print("--------------------------------------------------------")
 
-    # 列出重要Features
+    # List Importance Features
     featureImportance = pd.DataFrame(
         {'feature': list(train_csv.columns), 'importance': RFR.feature_importances_}).sort_values('importance',
                                                                                                   ascending=False)
@@ -117,18 +117,17 @@ def doGridSearch(data_x,data_valance_y,data_arousal_y):
     gridSearchSVR(train_x, train_y)
 
 def doNormalRegressor():
-    #使用数据集
-    #Base set
+    # Base set
     # data_x, data_valance_y, data_arousal_y, train_csv = prepareDataset('./dataset/dataset_nor_zsocre.csv','F0final_sma_stddev','pcm_fftMag_mfcc_sma_de[14]_amean')
-    #开始训练
-    # 使用筛选后数据集
+    # Start training
+    # Using selected feature (By RFECV) For enaluate Valance
     data_x, data_valance_y, data_arousal_y, train_csv = prepareDataset('./dataset/selected_v_dataset.csv','audspec_lengthL1norm_sma_amean','pcm_fftMag_psySharpness_sma_de_stddev')
 
     print("Estamateing Valance:")
     train_x, test_x, train_y, test_y = train_test_split(data_x, data_valance_y, test_size=0.20, shuffle=True)
     runRFRRegressor(train_x,train_y,test_x,test_y,"rank_valance",train_csv)
     runSVMRegressor(train_x,train_y,test_x,test_y)
-    #使用筛选后数据集
+    # Using selected feature (By RFECV) For enaluate arosual
     data_x, data_valance_y, data_arousal_y, train_csv = prepareDataset('./dataset/selected_a_dataset.csv','audspec_lengthL1norm_sma_amean','pcm_fftMag_psySharpness_sma_de_stddev')
 
     print("Estamateing Arousal:")

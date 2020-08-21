@@ -2,32 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29d47445-781c-474a-9996-96e14e73e40d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/notebook/.ipynb_checkpoints/Database Anyltic-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebook/.ipynb_checkpoints/RFE Analytic-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebook/Database Anyltic.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebook/RFE Analytic.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rfe_benchmark_random_forest_av.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rfe_benchmark_random_forest_av.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rfe_benchmark_svr_a.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rfe_benchmark_svr_av.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rfe_benchmark_svr_av.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rfe_benchmark_svr_v.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RFE_feature.py" beforeDir="false" afterPath="$PROJECT_DIR$/RFE_feature.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RFE_rank_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/RFE_rank_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cross_vaidation.py" beforeDir="false" afterPath="$PROJECT_DIR$/cross_vaidation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cv_deam_a.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cv_deam_a.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cv_deam_v.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cv_deam_v.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cv_sf_a.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cv_sf_a.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cv_sf_v.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cv_sf_v.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebook/.ipynb_checkpoints/Thesis-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebook/Thesis.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rank_rfe_arousal.csv" beforeDir="false" afterPath="$PROJECT_DIR$/rank_rfe_arousal.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rank_rfe_valance.csv" beforeDir="false" afterPath="$PROJECT_DIR$/rank_rfe_valance.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rfe_benchmark_a.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rfe_benchmark_v.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/dataset_nor_zsocre.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/dataset_nor_zsocre.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/selected_v_dataset.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/selected_v_dataset.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e.csv" beforeDir="false" afterPath="$PROJECT_DIR$/e.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neural_network.py" beforeDir="false" afterPath="$PROJECT_DIR$/neural_network.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rfe_benchmark_svr_a.csv" beforeDir="false" afterPath="$PROJECT_DIR$/rfe_benchmark_svr_a.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rfe_benchmark_svr_v.csv" beforeDir="false" afterPath="$PROJECT_DIR$/rfe_benchmark_svr_v.csv" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,24 +32,18 @@
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -83,13 +62,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
