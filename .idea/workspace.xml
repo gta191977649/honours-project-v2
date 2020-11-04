@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29d47445-781c-474a-9996-96e14e73e40d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RFE_feature.py" beforeDir="false" afterPath="$PROJECT_DIR$/RFE_feature.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RFE_rank_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/RFE_rank_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/dataset_nor_zsocre.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/dataset_nor_zsocre.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/selected_v_dataset.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/selected_v_dataset.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e.csv" beforeDir="false" afterPath="$PROJECT_DIR$/e.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neural_network.py" beforeDir="false" afterPath="$PROJECT_DIR$/neural_network.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rfe_benchmark_svr_a.csv" beforeDir="false" afterPath="$PROJECT_DIR$/rfe_benchmark_svr_a.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rfe_benchmark_svr_v.csv" beforeDir="false" afterPath="$PROJECT_DIR$/rfe_benchmark_svr_v.csv" afterDir="false" />
-    </list>
+    <list default="true" id="29d47445-781c-474a-9996-96e14e73e40d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
