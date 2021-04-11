@@ -1,0 +1,2 @@
+pcm_fftMag_spectralSlope_sma_de_stddev
+pcm_RMSenergy_sma_de_stddev

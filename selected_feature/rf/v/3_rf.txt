@@ -1,0 +1,3 @@
+pcm_fftMag_spectralSlope_sma_de_stddev
+pcm_RMSenergy_sma_de_stddev
+audspec_lengthL1norm_sma_de_stddev

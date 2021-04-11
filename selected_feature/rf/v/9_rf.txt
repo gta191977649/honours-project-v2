@@ -1,0 +1,9 @@
+pcm_fftMag_spectralSlope_sma_de_stddev
+pcm_RMSenergy_sma_de_stddev
+audspec_lengthL1norm_sma_de_stddev
+audspec_lengthL1norm_sma_stddev
+audSpec_Rfilt_sma_de[19]_stddev
+audSpec_Rfilt_sma[23]_stddev
+audSpec_Rfilt_sma[23]_amean
+audSpec_Rfilt_sma[19]_amean
+audSpec_Rfilt_sma[18]_stddev

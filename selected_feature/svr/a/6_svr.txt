@@ -1,0 +1,6 @@
+pcm_fftMag_spectralCentroid_sma_amean
+pcm_fftMag_psySharpness_sma_amean
+pcm_fftMag_psySharpness_sma_de_stddev
+pcm_fftMag_spectralCentroid_sma_de_stddev
+pcm_RMSenergy_sma_de_stddev
+pcm_RMSenergy_sma_stddev

@@ -71,8 +71,9 @@ def rfeTest(rankPath,testingfor):
 
         #2.Test Regressor on each test set
         train_x, test_x, train_y, test_y = prepareDatasetForTraining(feature,testingfor)
+
+        """
         score_svr = runSVMRegressor(train_x,train_y,test_x,test_y)
-        score_rmf = runRFRegressor(train_x,train_y,test_x,test_y)
         #3.Obtain regressor results
         print("\n")
         system('cls')
@@ -83,20 +84,32 @@ def rfeTest(rankPath,testingfor):
         print("----------------------------------------------------")
         result.append({"n_of_feature":n_of_feature,"score":score_svr})
 
+        f = open("selected_feature/svr/{}/{}_svr.txt".format(testingfor,n_of_feature), "w")
+        for feature in selected_feature:
+            f.write(feature+"\n")
+        f.close()
+        """
+
+        score_rmf = runRFRegressor(train_x,train_y,test_x,test_y)
         print("Benchmark feature:{} for: {}".format(len(selected_feature)+1,testingfor))
         print("------------------- RANDOM FOREST Result ---------------------")
         print("SCORE:{}".format(score_rmf))
         print("----------------------------------------------------")
         result.append({"n_of_feature":n_of_feature,"score":score_rmf})
+        f = open("selected_feature/rf/{}/{}_rf.txt".format(testingfor,n_of_feature), "w")
+        for feature in selected_feature:
+            f.write(feature + "\n")
+        f.close()
+
     return result
 
 def startRFEFeatureTest():
     #need 2 type，valance 和 arousal
     #Test valance
-    valanceScore = rfeTest(PATH_RANK_V,'v')
+    #valanceScore = rfeTest(PATH_RANK_V,'v')
     #Save to csv
-    csv = pd.DataFrame(valanceScore)
-    csv.to_csv('./rfe_benchmark_svr_v.csv')
+    #csv = pd.DataFrame(valanceScore)
+    #csv.to_csv('./rfe_benchmark_svr_v.csv')
     #Test arousal
     arousalScore = rfeTest(PATH_RANK_A,'a')
     # Save to csv
