@@ -26,7 +26,7 @@ data_arousal_y = np.array(data_arousal_y)
 min_features_to_select = 1
 X, y = data_x,data_valance_y
 estimator = SVR(kernel="linear")
-selector = RFECV(estimator, step=1, cv=10,verbose=3)
+selector = RFECV(estimator, step=1, cv=10,verbose=3,n_jobs=-1)
 selector = selector.fit(X, y)
 feature_names = data_x.columns
 
