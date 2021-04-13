@@ -28,7 +28,7 @@ data_arousal_y = np.array(data_arousal_y)
 #min_features_to_select = 3
 
 #Chouse label --->
-X, y = data_x,data_valance_y
+X, y = data_x,data_arousal_y
 
 #estimator = SVR(cache_size=200, coef0=0.0, degree=3, epsilon=0.2, gamma='auto', kernel='linear', max_iter=-1, shrinking=True, tol=0.001)
 estimator = RandomForestRegressor()
@@ -45,7 +45,7 @@ for bool, feature in zip(mask, feature_names):
 
 print("Optimal number of features : % d" % selector.n_features_)
 print(new_features)
-f = open("selected_feature_rf_v.txt","w")
+f = open("selected_feature_rf_a.txt","w")
 for feature in new_features:
     f.write(feature+"\n")
 
@@ -53,7 +53,7 @@ data = {}
 data["n_of_feature"] = range(0,len(selector.grid_scores_))
 data["score"] = selector.grid_scores_
 csv = pd.DataFrame(data)
-csv.to_csv("selected_feature_rf_v_chart.csv")
+csv.to_csv("selected_feature_rf_a_chart.csv")
 print(csv)
 # Plot number of features VS. cross-validation scores
 plt.figure()

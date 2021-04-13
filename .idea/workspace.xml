@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29d47445-781c-474a-9996-96e14e73e40d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/selected_feature_rf_a.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/selected_feature_rf_a_chart.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/feature_select_rfecv_new.py" beforeDir="false" afterPath="$PROJECT_DIR$/feature_select_rfecv_new.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selected_feature_rf_v.txt" beforeDir="false" afterPath="$PROJECT_DIR$/selected_feature_rf_v.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selected_feature_rf_v_chart.csv" beforeDir="false" afterPath="$PROJECT_DIR$/selected_feature_rf_v_chart.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
