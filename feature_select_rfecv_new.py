@@ -28,7 +28,7 @@ data_arousal_y = np.array(data_arousal_y)
 #min_features_to_select = 3
 
 #Chouse label --->
-X, y = data_x[:10],data_valance_y[:10]
+X, y = data_x,data_valance_y
 
 #estimator = SVR(cache_size=200, coef0=0.0, degree=3, epsilon=0.2, gamma='auto', kernel='linear', max_iter=-1, shrinking=True, tol=0.001)
 estimator = RandomForestRegressor()

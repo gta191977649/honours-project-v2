@@ -1,7 +1,0 @@
-audspec_lengthL1norm_sma_amean
-pcm_fftMag_spectralVariance_sma_amean
-pcm_fftMag_mfcc_sma[1]_amean
-voicingFinalUnclipped_sma_de_stddev
-audspec_lengthL1norm_sma_de_stddev
-pcm_fftMag_spectralEntropy_sma_de_stddev
-pcm_fftMag_mfcc_sma_de[13]_stddev
