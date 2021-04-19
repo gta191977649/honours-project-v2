@@ -56,12 +56,7 @@ def rfModelTestArousal():
     data_x = dataset.loc[:,feature_arosal]
 
     train_x, test_x, train_y, test_y = train_test_split(data_x, data_arousal_y, test_size=0.20, shuffle=True)
-    RFR = RandomForestRegressor(bootstrap=True, criterion='mse', max_depth=2,
-                                max_features='auto', max_leaf_nodes=None,
-                                min_impurity_decrease=0.0, min_impurity_split=None,
-                                min_samples_leaf=1, min_samples_split=2,
-                                min_weight_fraction_leaf=0.0, n_estimators=1000, n_jobs=100,
-                                oob_score=False, random_state=0, verbose=0, warm_start=False, )
+    RFR = RandomForestRegressor()
     RFR.fit(train_x, train_y)
     score = RFR.score(test_x, test_y)
     return score
@@ -75,12 +70,7 @@ def rfModelTestValance():
     data_x = dataset.loc[:,features]
 
     train_x, test_x, train_y, test_y = train_test_split(data_x, data_arousal_y, test_size=0.20, shuffle=True)
-    RFR = RandomForestRegressor(bootstrap=True, criterion='mse', max_depth=2,
-                                max_features='auto', max_leaf_nodes=None,
-                                min_impurity_decrease=0.0, min_impurity_split=None,
-                                min_samples_leaf=1, min_samples_split=2,
-                                min_weight_fraction_leaf=0.0, n_estimators=1000, n_jobs=100,
-                                oob_score=False, random_state=0, verbose=0, warm_start=False, )
+    RFR = RandomForestRegressor()
     RFR.fit(train_x, train_y)
     score = RFR.score(test_x, test_y)
     return score
@@ -89,12 +79,7 @@ def rfModelTestNoArousal():
     data_x = dataset.loc[:, 'F0final_sma_stddev':'pcm_fftMag_mfcc_sma_de[14]_amean']
 
     train_x, test_x, train_y, test_y = train_test_split(data_x, data_arousal_y, test_size=0.20, shuffle=True)
-    RFR = RandomForestRegressor(bootstrap=True, criterion='mse', max_depth=2,
-                                max_features='auto', max_leaf_nodes=None,
-                                min_impurity_decrease=0.0, min_impurity_split=None,
-                                min_samples_leaf=1, min_samples_split=2,
-                                min_weight_fraction_leaf=0.0, n_estimators=1000, n_jobs=100,
-                                oob_score=False, random_state=0, verbose=0, warm_start=False, )
+    RFR = RandomForestRegressor()
     RFR.fit(train_x, train_y)
     score = RFR.score(test_x, test_y)
     return score
@@ -103,12 +88,7 @@ def rfModelTestNoValance():
     data_x = dataset.loc[:, 'F0final_sma_stddev':'pcm_fftMag_mfcc_sma_de[14]_amean']
 
     train_x, test_x, train_y, test_y = train_test_split(data_x, data_arousal_y, test_size=0.20, shuffle=True)
-    RFR = RandomForestRegressor(bootstrap=True, criterion='mse', max_depth=2,
-                                max_features='auto', max_leaf_nodes=None,
-                                min_impurity_decrease=0.0, min_impurity_split=None,
-                                min_samples_leaf=1, min_samples_split=2,
-                                min_weight_fraction_leaf=0.0, n_estimators=1000, n_jobs=100,
-                                oob_score=False, random_state=0, verbose=0, warm_start=False, )
+    RFR = RandomForestRegressor()
     RFR.fit(train_x, train_y)
     score = RFR.score(test_x, test_y)
     return score
@@ -135,7 +115,7 @@ def svrModelTestNoSelectValance():
     score = svr.score(test_x, test_y)
     return score
 
-if __name__ == '__main__':
+def runTest():
     testCycle = 10
 
     score_svr_a = []
@@ -177,13 +157,28 @@ if __name__ == '__main__':
     # RF
     rf_a_average = np.average(np.array(score_rf_a))
     print("RF Arousal Average: {}".format(rf_a_average))
-    rf_v_average_no = np.average(np.array(score_rf_v_no))
-    print("RF Arousal No Select Average: {}".format(rf_v_average_no))
+    rf_a_average_no = np.average(np.array(score_rf_a_no))
+    print("RF Arousal No Select Average: {}".format(rf_a_average_no))
     rf_v_average = np.average(np.array(score_rf_v))
     print("RF Valance Average: {}".format(rf_v_average))
     rf_v_average_no = np.average(np.array(score_rf_v_no))
     print("RF Valance No Select Average: {}".format(rf_v_average_no))
 
+
+    csv = pd.DataFrame()
+    csv["score_svr_a"] = score_svr_a
+    csv["score_svr_a_no"] = score_svr_a_no
+
+    csv["score_svr_v"] = score_svr_v
+    csv["score_svr_v_no"] = score_svr_v_no
+
+    csv["score_rf_a"] = score_rf_a
+    csv["score_rf_a_no"] = score_rf_a_no
+
+    csv["score_rf_v"] = score_rf_v
+    csv["score_rf_v_no"] = score_rf_v_no
+
+    csv.to_csv("./results/benchmarks2.csv")
 
     # chart
     """
@@ -191,4 +186,6 @@ if __name__ == '__main__':
     plt.ylim([0, 1])
     plt.show()
     """
-
+if __name__ == '__main__':
+    runTest()
+    
