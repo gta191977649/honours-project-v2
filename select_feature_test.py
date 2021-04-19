@@ -176,13 +176,13 @@ if __name__ == '__main__':
 
     # RF
     rf_a_average = np.average(np.array(score_rf_a))
-    print("SVR Arousal Average: {}".format(rf_a_average))
+    print("RF Arousal Average: {}".format(rf_a_average))
     rf_v_average_no = np.average(np.array(score_rf_v_no))
-    print("SVR Arousal No Select Average: {}".format(rf_v_average_no))
+    print("RF Arousal No Select Average: {}".format(rf_v_average_no))
     rf_v_average = np.average(np.array(score_rf_v))
-    print("SVR Valance Average: {}".format(rf_v_average))
+    print("RF Valance Average: {}".format(rf_v_average))
     rf_v_average_no = np.average(np.array(score_rf_v_no))
-    print("SVR Valance No Select Average: {}".format(rf_v_average_no))
+    print("RF Valance No Select Average: {}".format(rf_v_average_no))
 
 
     # chart
